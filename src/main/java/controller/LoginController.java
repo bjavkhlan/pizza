@@ -1,22 +1,42 @@
 package controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import dao.UserDAO;
+import model.User;
+
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 
-@WebServlet({ "/login", "" })
+@WebServlet({ "/login" })
 public class LoginController extends HttpServlet {
     ObjectMapper mapper = new ObjectMapper();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("login.jsp");
+    }
 
-        Product product = mapper.readValue(request.getParameter("product"), Product.class);
-        out.print(mapper.writeValueAsString(product));
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        String remember = req.getParameter("remember");
+        HttpSession session = req.getSession();
+        User user = UserDAO.getUserByUsername(username);
+        if (user != null && user.getPassword().equals(password)) {
+            session.setAttribute("user", user);
+            Cookie cookie = new Cookie("username", user.getUsername());
+            if ("true".equals(remember)) cookie.setMaxAge(30*24*60*60);
+            else cookie.setMaxAge(0);
+            resp.addCookie(cookie);
+        } else {
+            resp.getWriter().print("Username or password doesn't match");
+        }
+//        Product product = mapper.readValue(request.getParameter("product"), Product.class);
+//        out.print(mapper.writeValueAsString(product));
     }
 }
 
