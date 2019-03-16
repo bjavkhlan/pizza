@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: julia
@@ -11,6 +12,25 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <table id="tbl_products">
+      <thead>
+      <tr>
+          <th>Type</th>
+          <th>Price</th>
+          <th>Image</th>
+      </tr>
+      </thead>
+      <tbody>
+      <c:forEach items="${pizzas}" var="pizza">
+          <tr>
+              <td><c:out value="${pizza.type}" /></td>
+              <td><c:out value="${pizza.price}" /></td>
+              <td><img src="<c:url value="${pizza.imgURL}" />" ></td>
+          </tr>
+      </c:forEach>
+      </tbody>
+  </table>
+
+
   </body>
 </html>

@@ -17,9 +17,9 @@ public class PizzaDAO {
         pizzaDb.put(3, new Pizza(3,"Chicken", 5.5, "resources/images/pizza_Chicken.jpg"));
         pizzaDb.put(4, new Pizza(4,"Meat Lovers", 10.0, "resources/images/pizza_Meat_Lovers.jpg"));
         pizzaDb.put(5, new Pizza(5,"Pepperoni", 9.0, "resources/images/pizza_Pepperoni.jpg"));
-        pizzaDb.put(5, new Pizza(6,"Supreme", 11.0, "resources/images/pizza_Supreme.jpg"));
+        pizzaDb.put(6, new Pizza(6,"Supreme", 11.0, "resources/images/pizza_Supreme.jpg"));
     }
-    public List<Pizza> getAllPizza(){
+    public List<Pizza> getAllPizzas(){
         return new ArrayList<>(pizzaDb.values());
     }
 
