@@ -32,8 +32,11 @@ public class LoginController extends HttpServlet {
             if ("true".equals(remember)) cookie.setMaxAge(30*24*60*60);
             else cookie.setMaxAge(0);
             resp.addCookie(cookie);
+            resp.getWriter().print("Success!");
+            return;
         } else {
             resp.getWriter().print("Username or password doesn't match");
+            return;
         }
 //        Product product = mapper.readValue(request.getParameter("product"), Product.class);
 //        out.print(mapper.writeValueAsString(product));

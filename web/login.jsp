@@ -14,7 +14,7 @@
     <div class="container">
         <form action="login" method="post">
             Username: <input name="username"/><br/>
-            Password: <input type="password" name="password" /></form>
+            Password: <input type="password" name="password" /><br/>
             <input type="checkbox" value="true" name="remember" id="remember" /><label for="remember">Remember me</label><br />
             <input type="submit" value="Login" />
         </form>
