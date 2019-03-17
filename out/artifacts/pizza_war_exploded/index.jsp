@@ -19,7 +19,7 @@
   <div class="navbar"></div>
   <div class="main">
       <c:forEach items="${pizzas}" var="pizza">
-          <div class="pizza" id="${pizza.id}">
+          <div class="pizza" pizzaId="${pizza.id}">
               <div class="col-left">
                   <h3><c:out value="${pizza.type}" /></h3>
                   <p>
@@ -29,12 +29,9 @@
                   </p>
                   <div class="control">
                       <select class="control-inside size" price="${pizza.price}">
-
                           <c:forEach items="${size}" var="size">
                               <option value=${size} ><c:out value="${size}" /></option>
                           </c:forEach>
-
-
                       </select>
                       <br />
                       <select class="control-inside">
@@ -43,7 +40,7 @@
                           </c:forEach>
                       </select>
                       <br />
-                      <input type="submit" value="Add to cart" class="control-inside" />
+                      <input type="submit" value="Add to cart" class="control-inside addToCart" />
                   </div>
               </div>
               <div class="col-right">
