@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: #ebebeb;
+}
+.main {
+  width: 80%;
+  overflow: hidden;
+  margin: auto;
+}
+.pizza {
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  width: 45%;
+  float: left;
+  margin: 2.5%;
+  padding: 2%;
+}
+.col-left {
+  width: 70%;
+  float: left;
+}
+.col-right {
+  width: 25%;
+  float: right;
+  text-align: center;
+}
+.col-right img {
+  padding: 1%;
+  margin: 1%;
+  border-radius: 10px;
+  width: 100%;
+}
+.col-right p {
+  margin-top: 8%;
+}
+
+.control-inside {
+  border-radius: 30px;
+  margin: 2%;
+  padding: 3%;
+  width: 100%;
+}

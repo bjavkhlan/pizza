@@ -10,27 +10,52 @@
 <html>
   <head>
     <title>$Title$</title>
+      <link href="resources/css/index.css" rel="stylesheet" />
+      <script type="text/javascript"
+              src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-  <table id="tbl_products">
-      <thead>
-      <tr>
-          <th>Type</th>
-          <th>Price</th>
-          <th>Image</th>
-      </tr>
-      </thead>
-      <tbody>
+  <div class="header"></div>
+  <div class="navbar"></div>
+  <div class="main">
       <c:forEach items="${pizzas}" var="pizza">
-          <tr>
-              <td><c:out value="${pizza.type}" /></td>
-              <td><c:out value="${pizza.price}" /></td>
-              <td><img src="<c:url value="${pizza.imgURL}" />" ></td>
-          </tr>
-      </c:forEach>
-      </tbody>
-  </table>
+          <div class="pizza" id="${pizza.id}">
+              <div class="col-left">
+                  <h3><c:out value="${pizza.type}" /></h3>
+                  <p>
+                      Enjoy this freshly prepared pizza for family dinner or a group
+                      lunch, including pepperoni, seasoned pork, beef, mushrooms,
+                      greenMore...
+                  </p>
+                  <div class="control">
+                      <select class="control-inside size" price="${pizza.price}">
 
+                          <c:forEach items="${size}" var="size">
+                              <option value=${size} ><c:out value="${size}" /></option>
+                          </c:forEach>
+
+
+                      </select>
+                      <br />
+                      <select class="control-inside">
+                          <c:forEach items="${pan}" var="pan">
+                              <option value=${pan}><c:out value="${pan}" /></option>
+                          </c:forEach>
+                      </select>
+                      <br />
+                      <input type="submit" value="Add to cart" class="control-inside" />
+                  </div>
+              </div>
+              <div class="col-right">
+                  <img src="<c:url value="${pizza.imgURL}" />" >
+                  <p>Price: $<span class="price"><c:out value="${pizza.price}" /></span></p>
+              </div>
+          </div>
+      </c:forEach>
+  </div>
+  <div class="footer"></div>
+
+    <script src="resources/js/index.js"></script>
 
   </body>
 </html>
