@@ -1,3 +1,7 @@
+@font-face {
+  font-family: RobotoCondensed;
+  src: url(../fonts/RobotoCondensed-Regular.ttf);
+}
 * {
   margin: 0;
   padding:0;
@@ -6,6 +10,7 @@
 }
 body {
   background-color: #ebebeb;
+  font-family: RobotoCondensed, sans-serif;
 }
 .main {
   width: 80%;
@@ -61,16 +66,40 @@ body {
 .addToCart:hover{
   opacity: 0.8;
 }
-.header .cart{
-   display:inline-block;
- }
-.header .logo{
-  display:inline-block;
+
+
+/*  Header */
+
+.header {
+  background-color: #FF6B6B;
+  color: #F7FFF7;
+  overflow: hidden;
+  font-size: 18pt;
 }
-.header .cart img{
-  width: 50px;
-  background-color:yellow;
+
+.headerContent {
+  width: 76%;
+  margin: auto;
+  padding:
 }
-.header .logo img{
-  width:100px;
+.headerContent a {
+  color: #F7FFF7;
+  text-decoration: none;
+}
+.rightMenu {
+  float: right;
+  vertical-align: bottom;
+  margin-top: 10px;
+}
+.leftMenu img {
+  height: 80px;
+  float: left;
+}
+.rightMenu img {
+  height: 60px;
+}
+.menuItem {
+  display: inline-block;
+  padding: 5px;
+  vertical-align: bottom;
 }

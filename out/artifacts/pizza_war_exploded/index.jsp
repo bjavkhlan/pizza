@@ -16,8 +16,28 @@
   </head>
   <body>
   <div class="header">
-      <div class="logo" ><a href =""><img src="resources/images/logo.png"></a></div>
-      <div class = "cart"><a href ="/cart"><img src ="resources/images/cart.png"></a></div>
+      <div class="headerContent">
+          <div class="menuItem leftMenu">
+              <a href ="/"><img src="resources/images/logo2.png" /></a>
+
+          </div>
+          <div class = "rightMenu">
+              <div class="menuItem userMenu">
+                  <c:if test="${user==null}"><a href="/login">Login</a></c:if>
+                  <c:if test="${user!=null}">
+                      Hello, ${user.username}!<br />
+                      <a href="/logout">(logout)</a>
+                  </c:if>
+              </div>
+              <div class="menuItem">
+                  <a href="/order">Orders</a>
+              </div>
+              <div class="menuItem">
+                  <a href ="/placeOrder.jsp"><img src ="resources/images/white-cart.png" /></a>
+                  [${cart.items.size()}]
+              </div>
+          </div>
+      </div>
   </div>
   <div class="navbar"></div>
   <div class="main">
