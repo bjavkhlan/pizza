@@ -10,17 +10,44 @@
 <html>
 <head>
     <title>My Orders</title>
+    <link href ="resources/css/order.css" rel="stylesheet">
 </head>
 <body>
     <c:forEach items="${orders}" var="order" >
-        <h2>Order: </h2>
-        Invoice: $${order.cart.calculateTotalPrice()} <br />
-        Address: ${order.address} <br />
-        <ul>
-            <c:forEach items="${order.cart.items}" var="item">
-                <li>${item.pizza.type}  * ${item.quantity} = $${item.calculatePrice()}</li>
-            </c:forEach>
-        </ul>
+        <div class="container">
+            <h2>Order:</h2>
+            <div id="order">
+                <table>
+                    <tr>
+                        <th>Pizza Type</th>
+                        <th>Size</th>
+                        <th>Pan</th>
+                        <th>Quantity</th>
+                    </tr>
+                    <c:forEach items="${order.cart.items}" var="item">
+                        <tr>
+                            <td>${item.pizza.type}</td>
+                            <td>${item.size}</td>
+                            <td>${item.pan}</td>
+                            <td>${item.quantity}</td>
+                        </tr>
+
+                    </c:forEach>
+                    </table>
+                <table>
+                    <tr>
+                        <th><strong>Invoice</strong></th>
+                        <th><strong>Address</strong></th>
+                    </tr>
+
+                    <tr>
+                        <td>$${order.cart.calculateTotalPrice()}</td>
+                        <td>${order.address}</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
     </c:forEach>
 </body>
 </html>
