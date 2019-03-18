@@ -15,7 +15,10 @@
               src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-  <div class="header"></div>
+  <div class="header">
+      <div class="logo" ><a href =""><img src="resources/images/logo.png"></a></div>
+      <div class = "cart"><a href ="/cart"><img src ="resources/images/cart.png"></a></div>
+  </div>
   <div class="navbar"></div>
   <div class="main">
       <c:forEach items="${pizzas}" var="pizza">
