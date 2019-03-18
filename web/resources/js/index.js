@@ -20,7 +20,7 @@ $(function(){
             pizzaPan:pizzaPan,
             pizzaQuantity:pizzaQuantity
         }, function(){
-            alert("Added to Cart");
+            location.reload();
         });
     }
     function displayPrice(event){

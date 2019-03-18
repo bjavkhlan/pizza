@@ -71,7 +71,12 @@ body {
 /*  Header */
 
 .header {
-  background-color: #FF6B6B;
+  /*background-color: #FF6B6B;*/
+    background: linear-gradient(
+            to right,
+            #98adab,
+            #4ecdc4
+    );
   color: #F7FFF7;
   overflow: hidden;
   font-size: 18pt;
@@ -80,7 +85,6 @@ body {
 .headerContent {
   width: 76%;
   margin: auto;
-  padding:
 }
 .headerContent a {
   color: #F7FFF7;
@@ -105,5 +109,6 @@ body {
 }
 
 .menuItem:hover {
-    background-color: #FF8B8B
+    /*background-color: #FF8B8B;*/
+    background-color: #98adab;
 }
