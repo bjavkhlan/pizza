@@ -14,8 +14,33 @@
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="<c:url value='resources/js/order.js'/>"></script>
     <link href="resources/css/placeOrder.css" rel="stylesheet" >
+    <link href="resources/css/header.css" rel="stylesheet" >
 </head>
 <body>
+    <div class="header">
+        <div class="headerContent">
+            <div class="menuItem leftMenu">
+                <a href ="/"><img src="resources/images/logo2.png" /></a>
+
+            </div>
+            <div class = "rightMenu">
+                <div class="menuItem userMenu">
+                    <c:if test="${user==null}"><a href="/login">Login</a></c:if>
+                    <c:if test="${user!=null}">
+                        Hello, ${user.username}!<br />
+                        <a href="/logout">(logout)</a>
+                    </c:if>
+                </div>
+                <div class="menuItem">
+                    <a href="/order">Orders</a>
+                </div>
+                <div class="menuItem">
+                    <a href ="/placeOrder.jsp"><img src ="resources/images/white-cart.png" /></a>
+                    [${cart.items.size()}]
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <h2>Your order</h2>
         <div id="cartItems">

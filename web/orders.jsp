@@ -10,9 +10,35 @@
 <html>
 <head>
     <title>My Orders</title>
+    <link href="resources/css/header.css" rel="stylesheet" >
     <link href ="resources/css/order.css" rel="stylesheet">
 </head>
 <body>
+<div class="header">
+    <div class="headerContent">
+        <div class="menuItem leftMenu">
+            <a href ="/"><img src="resources/images/logo2.png" /></a>
+
+        </div>
+        <div class = "rightMenu">
+            <div class="menuItem userMenu">
+                <c:if test="${user==null}"><a href="/login">Login</a></c:if>
+                <c:if test="${user!=null}">
+                    Hello, ${user.username}!<br />
+                    <a href="/logout">(logout)</a>
+                </c:if>
+            </div>
+            <div class="menuItem">
+                <a href="/order">Orders</a>
+            </div>
+            <div class="menuItem">
+                <a href ="/placeOrder.jsp"><img src ="resources/images/white-cart.png" /></a>
+                [${cart.items.size()}]
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main">
     <c:forEach items="${orders}" var="order" >
         <div class="container">
             <h2>Order:</h2>
@@ -49,5 +75,10 @@
             </div>
         </div>
     </c:forEach>
+</div>
+
+<div class="footer">
+    Made by Jack & Julia
+</div>
 </body>
 </html>

@@ -11,6 +11,7 @@
   <head>
     <title>Pizza Delivery</title>
       <link href="resources/css/index.css" rel="stylesheet" />
+      <link href="resources/css/header.css" rel="stylesheet" >
       <script type="text/javascript"
               src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
@@ -39,7 +40,6 @@
           </div>
       </div>
   </div>
-  <div class="navbar"></div>
   <div class="main">
       <c:forEach items="${pizzas}" var="pizza">
           <div class="pizza" pizzaId="${pizza.id}">
@@ -81,7 +81,10 @@
           </div>
       </c:forEach>
   </div>
-  <div class="footer"></div>
+
+  <div class="footer">
+      Made by Jack & Julia
+  </div>
 
     <script src="resources/js/index.js"></script>
 

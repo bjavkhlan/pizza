@@ -1,11 +1,24 @@
-body {
-  min-height: 100%;
-  font-family: "lato", sans-serif;
-  color: #5b5b5b;
-  background: white;
-  background: linear-gradient(to right, #98adab, #4ecdc4);
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: RobotoCondensed;
+  src: url(../fonts/RobotoCondensed-Regular.ttf);
 }
+
+
+
+
+body {
+  font-family: RobotoCondensed, sans-serif;
+  background: linear-gradient(to right, #98adab, #4ecdc4);
+}
+
+.main {
+  color: #5b5b5b;
+  padding-top: 100px;
+  width: 80%;
+  overflow: hidden;
+  margin: auto;
+}
+
 table {
   border: 1px solid #e1e8e1;
   border-collapse: collapse;

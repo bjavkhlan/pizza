@@ -10,5 +10,6 @@
     <filter-mapping>
         <filter-name>loginFilter</filter-name>
         <url-pattern>/order</url-pattern>
+        <url-pattern>/placeOrder.jsp</url-pattern>
     </filter-mapping>
 </web-app>

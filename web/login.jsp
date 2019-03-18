@@ -11,25 +11,53 @@
 <head>
     <title>Login</title>
     <link href="resources/css/login.css" rel="stylesheet" />
+    <link href="resources/css/header.css" rel="stylesheet" />
     <script type="text/javascript"
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="<c:url value='resources/js/script.js'/>"></script>
 </head>
 <body>
+<div class="header">
+    <div class="headerContent">
+        <div class="menuItem leftMenu">
+            <a href ="/"><img src="resources/images/logo2.png" /></a>
+
+        </div>
+        <div class = "rightMenu">
+            <div class="menuItem userMenu">
+                <c:if test="${user==null}"><a href="/login">Login</a></c:if>
+                <c:if test="${user!=null}">
+                    Hello, ${user.username}!<br />
+                    <a href="/logout">(logout)</a>
+                </c:if>
+            </div>
+            <div class="menuItem">
+                <a href="/order">Orders</a>
+            </div>
+            <div class="menuItem">
+                <a href ="/placeOrder.jsp"><img src ="resources/images/white-cart.png" /></a>
+                [${cart.items.size()}]
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="logo">Login to Julia's Pizza</div>
     <div class="login-item">
         <form action="login" method="post" class="form form-login">
             <div class="form-field">
-                <label class="user" for="login-username"
-                ><span class="hidden">Username</span></label
-                >
+                <label class="user" for="login-username">
+                    <span class="hidden">Username</span>
+                </label>
                 <input
                         id="login-username"
                         type="text"
                         class="form-input"
                         placeholder="Username"
                         name="username"
+                        <c:if test="${cookie.username!=null}">
+                            value="${cookie.username.value}"
+                        </c:if>
                         required
                 />
             </div>
@@ -55,6 +83,9 @@
                       value="true"
                       name="remember"
                       id="remember"
+                      <c:if test="${cookie.username!=null}">
+                          checked
+                      </c:if>
               />
               <label for="remember">Remember me</label>
             </span>

@@ -2,6 +2,7 @@
   font-family: RobotoCondensed;
   src: url(../fonts/RobotoCondensed-Regular.ttf);
 }
+
 * {
   margin: 0;
   padding:0;
@@ -13,6 +14,7 @@ body {
   font-family: RobotoCondensed, sans-serif;
 }
 .main {
+  padding-top: 100px;
   width: 80%;
   overflow: hidden;
   margin: auto;
@@ -68,47 +70,3 @@ body {
 }
 
 
-/*  Header */
-
-.header {
-  /*background-color: #FF6B6B;*/
-    background: linear-gradient(
-            to right,
-            #98adab,
-            #4ecdc4
-    );
-  color: #F7FFF7;
-  overflow: hidden;
-  font-size: 18pt;
-}
-
-.headerContent {
-  width: 76%;
-  margin: auto;
-}
-.headerContent a {
-  color: #F7FFF7;
-  text-decoration: none;
-}
-.rightMenu {
-  float: right;
-  vertical-align: bottom;
-  margin-top: 10px;
-}
-.leftMenu img {
-  height: 80px;
-  float: left;
-}
-.rightMenu img {
-  height: 60px;
-}
-.menuItem {
-  display: inline-block;
-  padding: 5px;
-  vertical-align: bottom;
-}
-
-.menuItem:hover {
-    /*background-color: #FF8B8B;*/
-    background-color: #98adab;
-}
