@@ -3,12 +3,29 @@ $(function(){
     $('.addToCart').click(addToCart);
     function addToCart(event){
         var element = event.currentTarget;
-
+        var pizzaId = $(element).closest(".pizza").attr("pizzaId");
+        var pizzaSize = $(element).closest(".pizza").find(".size").val();
+        var pizzaPan = $(element).closest(".pizza").find(".pan").val();
+        var pizzaQuantity = $(element).closest(".pizza").find(".quantity").val();
+        var ret={
+            pizzaId:pizzaId,
+            pizzaSize:pizzaSize,
+            pizzaPan:pizzaPan,
+            pizzaQuantity:pizzaQuantity
+        }
+        console.log(ret);
+        $.post('cart', {
+            pizzaId:pizzaId,
+            pizzaSize:pizzaSize,
+            pizzaPan:pizzaPan,
+            pizzaQuantity:pizzaQuantity
+        }, function(){
+            alert("Added to Cart");
+        });
     }
     function displayPrice(event){
         var element = event.currentTarget;
-        console.log($(element).attr("price"));
-        console.log($(element).val());
+
         var price = $(element).attr("price");
         var size = $(element).val();
         price = parseFloat(price);
@@ -20,11 +37,7 @@ $(function(){
         }
         $(element).closest(".pizza").find(".price").text(price);
 
-        // var arr = $('select.size').map(function(){
-        //     return this.value
-        // }).get()
-        // console.log(arr);
-        // $.post('custSize', {custSize:JSON.stringify(arr)}, processData, "json")
+
     }
 
 

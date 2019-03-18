@@ -23,7 +23,7 @@ public class PizzaDAO {
         return new ArrayList<>(pizzaDb.values());
     }
 
-    public static Pizza getProductById(int productId){
-        return pizzaDb.get(productId);
+    public static Pizza getPizzaById(int pizzaId){
+        return pizzaDb.get(pizzaId);
     }
 }

@@ -34,14 +34,22 @@
                           </c:forEach>
                       </select>
                       <br />
-                      <select class="control-inside">
+                      <select class="control-inside pan">
                           <c:forEach items="${pan}" var="pan">
                               <option value=${pan}><c:out value="${pan}" /></option>
                           </c:forEach>
                       </select>
                       <br />
-                      <input type="submit" value="Add to cart" class="control-inside addToCart" />
-                  </div>
+                      <div class="control-inside">
+                          <select class="quantity">
+                              <c:forEach var="i" begin="1" end="10">
+                                  <option value=${i}><c:out value="${i}" /></option>
+                              </c:forEach>
+                          </select>
+                          <input type="submit" value="Add to cart" class="addToCart" />
+                      </div>
+                      </div>
+
               </div>
               <div class="col-right">
                   <img src="<c:url value="${pizza.imgURL}" />" >

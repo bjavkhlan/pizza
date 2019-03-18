@@ -7,6 +7,10 @@ public class Pizza {
 
     private String imgURL;
 
+    public Pizza(){
+        super();
+    }
+
     public Pizza(int id, String type, double price, String imgURL){
         super();
         this.id = id;

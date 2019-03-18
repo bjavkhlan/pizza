@@ -40,8 +40,20 @@ body {
 }
 
 .control-inside {
-  border-radius: 30px;
   margin: 2%;
-  padding: 3%;
   width: 100%;
+}
+.quantity{
+  float:left;
+  width:50%;
+  margin:auto;
+
+}
+.addToCart{
+  width:50%;
+  border-radius:5px;
+  margin:auto;
+}
+.addToCart:hover{
+  opacity: 0.8;
 }

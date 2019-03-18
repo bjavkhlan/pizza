@@ -15,9 +15,6 @@ import java.io.IOException;
 @WebServlet("")
 public class HomeController extends HttpServlet {
 
-
-
-
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("pizzas", PizzaDAO.getAllPizzas());
         req.setAttribute("pan", Pan.values());
