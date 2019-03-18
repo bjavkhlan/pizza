@@ -103,3 +103,7 @@ body {
   padding: 5px;
   vertical-align: bottom;
 }
+
+.menuItem:hover {
+    background-color: #FF8B8B
+}
